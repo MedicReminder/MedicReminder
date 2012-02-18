@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, MedReminderActivity!</string>
     <string name="app_name">MedReminder</string>
+    <string name="labelNotificationActivity">labelNotificationActivity</string>
 
 </resources>
