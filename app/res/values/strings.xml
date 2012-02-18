@@ -3,5 +3,16 @@
 
     <string name="hello">Hello World, MedReminderActivity!</string>
     <string name="app_name">MedReminder</string>
+    <string name="prefCategoryAlerts">Alerts</string>
+    <string name="prefCategoryTiming">Timing</string>
+    <string name="prefSmsTitle">Sms alert number</string>
+    <string name="prefSmsSummary">The phone number of the person who needs to be alerted when the user doesn\'t respond</string>
+    <string name="prefActivityLabel">Edit preferences</string>
+    <string name="prefTimeMorning">Morning</string>
+    <string name="prefTimeNoon">Noon</string>
+    <string name="prefTimeEvening">Evening</string>
+    <string name="prefBedtime">Bedtime</string>
+    <string name="menuSettings">Settings</string>
+
 
 </resources>
