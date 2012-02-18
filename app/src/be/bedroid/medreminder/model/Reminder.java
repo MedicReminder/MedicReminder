@@ -47,7 +47,7 @@ public class Reminder {
 	 */
 	
 	public static final String TABLE_NAME = "reminder";   
-	public static final String ID = "id";
+	public static final String ID = "_id";
 	public static final String MEDICINE_ID = "medicine_id";
 	public static final String TIME = "time"; 
     private static final String TABLE_CREATE =
