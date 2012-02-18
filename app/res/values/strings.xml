@@ -3,7 +3,6 @@
 
     <string name="hello">Hello World, MedReminderActivity!</string>
     <string name="app_name">MedReminder</string>
-<<<<<<< HEAD
     <string name="prefCategoryAlerts">Alerts</string>
     <string name="prefCategoryTiming">Timing</string>
     <string name="prefSmsTitle">Sms alert number</string>
@@ -13,10 +12,9 @@
     <string name="prefTimeNoon">Noon</string>
     <string name="prefTimeEvening">Evening</string>
     <string name="prefBedtime">Bedtime</string>
+    <string name="menuMeds">Meds</string>
     <string name="menuSettings">Settings</string>
-
-=======
+    <string name="labelMedsActivity">Meds</string>
     <string name="labelNotificationActivity">labelNotificationActivity</string>
->>>>>>> 041d757... sm
 
 </resources>

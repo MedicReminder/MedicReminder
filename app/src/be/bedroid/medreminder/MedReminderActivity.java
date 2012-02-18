@@ -9,14 +9,12 @@ import android.view.MenuItem;
 
 public class MedReminderActivity extends Activity {
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 	}
 
-<<<<<<< HEAD
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
@@ -31,12 +29,11 @@ public class MedReminderActivity extends Activity {
 			Intent intent = new Intent(this, EditPreferencesActivity.class);
 			startActivity(intent);
 			return true;
+		case R.id.medsMenu:
+			startActivity(new Intent(this, MedsActivity.class));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-=======
-		startActivity(new Intent(this, NotificationActivity.class));
-
->>>>>>> 041d757... sm
 	}
 }
