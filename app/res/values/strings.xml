@@ -16,5 +16,6 @@
     <string name="menuSettings">Settings</string>
     <string name="labelMedsActivity">Meds</string>
     <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="dummy">TODO</string>
 
 </resources>

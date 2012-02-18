@@ -1,17 +1,20 @@
 package be.bedroid.medreminder;
 
+import be.bedroid.medreminder.content.ReminderContentProvider;
+import be.bedroid.medreminder.model.Reminder;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -23,12 +26,41 @@ import android.widget.TextView;
  */
 public class MedsActivity extends FragmentActivity {
 
-	private static final String[] MEDS = {"a", "B", "c"};
+	//private static final String[] MEDS = {"a", "B", "c"};
+	// TODO: do not use static
+	private static String[] mColumns;
+	private static int[] mTo;
+	private static Cursor mManagedQuery;
+	private static SimpleCursorAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_layout);
+
+		mColumns = new String[] {
+				Reminder.ID,
+				"medicine_id",
+				"time"
+		};
+
+
+		mTo = new int[] {
+				R.id.itemReminderId,
+				R.id.itemMedicine,
+				R.id.itemTime
+		};
+
+
+		mManagedQuery = managedQuery(
+				ReminderContentProvider.CONTENT_URI,
+				mColumns,
+				null,
+				null,
+				null
+				);
+
+		mAdapter = new SimpleCursorAdapter(this, R.layout.list_item_reminder, mManagedQuery, mColumns, mTo);
 	}
 
 	/**
@@ -55,6 +87,7 @@ public class MedsActivity extends FragmentActivity {
 				details.setArguments(getIntent().getExtras());
 				getSupportFragmentManager().beginTransaction().add(android.R.id.content, details).commit();
 			}
+
 		}
 	}
 
@@ -72,8 +105,13 @@ public class MedsActivity extends FragmentActivity {
 			super.onActivityCreated(savedInstanceState);
 
 			// Populate list with our static array of titles.
+			/*
 			setListAdapter(new ArrayAdapter<String>(getActivity(),
 					android.R.layout.simple_list_item_1, MEDS));
+			 */
+
+			setListAdapter(mAdapter);
+
 
 			// Check to see if we have a frame in which to embed the details
 			// fragment directly in the containing UI.
@@ -188,7 +226,8 @@ public class MedsActivity extends FragmentActivity {
 					4, getActivity().getResources().getDisplayMetrics());
 			text.setPadding(padding, padding, padding, padding);
 			scroller.addView(text);
-			text.setText(MEDS[getShownIndex()]);
+			//text.setText(MEDS[getShownIndex()]);
+			text.setText("TODO");
 			return scroller;
 		}
 	}

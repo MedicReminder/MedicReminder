@@ -26,33 +26,33 @@ public class MedReminderActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
+
 		OnClickListener testButton = new OnClickListener() {
 			public void onClick(View v) {
 				Cursor cursor = getContentResolver().query(
 						MedicineContentProvider.CONTENT_URI,
-					    new String[] {"id", "name", "method"},
-					    "name LIKE ?",
-					    new String[] {"%2%"},
-					    null);
-				
+						new String[] {Reminder.ID, "name", "method"},
+						"name LIKE ?",
+						new String[] {"%2%"},
+						null);
+
 				List<Medicine> medicines = MedicineMapper.mapCursorToMedicines(cursor);
-				
+
 				cursor = getContentResolver().query(
 						ReminderContentProvider.CONTENT_URI,
-					    new String[] {"id", "medicine_id", "time"},
-					    null,
-					    null,
-					    null);
-				
+						new String[] {Medicine.ID, "medicine_id", "time"},
+						null,
+						null,
+						null);
+
 				List<Reminder> reminders = ReminderMapper.mapCursorToReminders(cursor);
 			}
 		};
-		
+
 		Button button = (Button) findViewById(R.id.button1);
 		button.setOnClickListener(testButton);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
