@@ -18,6 +18,10 @@
     <string name="labelMedsActivity">Meds</string>
     <string name="labelRemindersActivity">Reminders</string>
     <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="menuRemindersAdd">Add</string>
+    <string name="menuRemindersSort">Sort</string>
+    <string name="menuRemindersSortByName">by name</string>
+    <string name="menuRemindersSortByTime">by time</string>
     <string name="dummy">TODO</string>
 
 </resources>

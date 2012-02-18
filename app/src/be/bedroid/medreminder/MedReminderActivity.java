@@ -77,4 +77,7 @@ public class MedReminderActivity extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+
 }
+
+

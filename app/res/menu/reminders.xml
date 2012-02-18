@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menuRemindersAdd"
+        android:icon="@drawable/ic_menu_add"
+        android:title="@string/menuRemindersAdd"/>
+    <item
+        android:id="@+id/menuRemindersSort"
+        android:icon="@drawable/ic_menu_sort_by_size"
+        android:title="@string/menuRemindersSort">
+        <menu>
+            <group android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/menuRemindersSortByName"
+                    android:title="@string/menuRemindersSortByName"/>
+                <item
+                    android:id="@+id/menuRemindersSortByTime"
+                    android:title="@string/menuRemindersSortByTime"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>
