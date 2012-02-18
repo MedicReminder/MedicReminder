@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- TODO Create more preferences -->
+    
+    <PreferenceCategory android:title="@string/prefCategoryTiming">
+        
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/prefCategoryAlerts">
+        <EditTextPreference 
+            android:key="sms"
+            android:title="@string/prefSmsTitle"
+            android:summary="@string/prefSmsSummary"
+            />
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

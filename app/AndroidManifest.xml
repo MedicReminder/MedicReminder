@@ -4,7 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="10" />
+    <uses-sdk android:minSdkVersion="4" />
+    <uses-sdk android:targetSdkVersion="10" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -18,7 +19,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+        <activity
+            android:name=".MedsActivity"
+            android:label="@string/labelMedsActivity" >
+        </activity>
+        <activity
+            android:name=".MedsActivity$DetailsActivity"
+            android:label="@string/labelMedsActivity" >
+        </activity>
+        <activity
+            android:name=".EditPreferencesActivity"
+            android:label="@string/prefActivityLabel" >
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/labelNotificationActivity" >
+        </activity>
+
         <provider
 		      android:name=".content.MedicineContentProvider"
 		      android:authorities="be.bedroid.medreminder.contentprovider.medicines" >
