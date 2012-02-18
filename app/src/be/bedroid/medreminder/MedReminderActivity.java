@@ -16,6 +16,7 @@ public class MedReminderActivity extends Activity {
 		setContentView(R.layout.main);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater menuInflater = getMenuInflater();
@@ -33,5 +34,9 @@ public class MedReminderActivity extends Activity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+=======
+		startActivity(new Intent(this, NotificationActivity.class));
+
+>>>>>>> 041d757... sm
 	}
 }

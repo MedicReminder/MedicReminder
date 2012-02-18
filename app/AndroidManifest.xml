@@ -19,8 +19,13 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:label="@string/prefActivityLabel"
             android:name=".EditPreferencesActivity" >
+=======
+            android:name=".NotificationActivity"
+            android:label="@string/labelNotificationActivity" >
+>>>>>>> 041d757... sm
         </activity>
     </application>
 
