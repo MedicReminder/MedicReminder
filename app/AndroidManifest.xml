@@ -18,6 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <provider
+		      android:name=".content.MedicineContentProvider"
+		      android:authorities="be.bedroid.medreminder.contentprovider.medicines" >
+	   </provider>  
+        <provider
+		      android:name=".content.ReminderContentProvider"
+		      android:authorities="be.bedroid.medreminder.contentprovider.reminders" >
+	   </provider>
     </application>
 
 </manifest>
