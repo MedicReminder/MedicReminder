@@ -13,8 +13,10 @@
     <string name="prefTimeEvening">Evening</string>
     <string name="prefBedtime">Bedtime</string>
     <string name="menuMeds">Meds</string>
+    <string name="menuReminders">Reminders</string>
     <string name="menuSettings">Settings</string>
     <string name="labelMedsActivity">Meds</string>
+    <string name="labelRemindersActivity">Reminders</string>
     <string name="labelNotificationActivity">labelNotificationActivity</string>
     <string name="dummy">TODO</string>
 

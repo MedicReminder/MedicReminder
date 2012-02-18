@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill"
+    android:padding="8dp" >
+
+    <TextView
+        android:id="@+id/itemMedicineId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:singleLine="true"
+        android:text="@string/dummy"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/itemMedicineName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemMedicineId"
+        android:text="@string/dummy"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/itemMedicineMethod"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/itemMedicineName"
+        android:text="@string/dummy"
+        android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill"
+    android:padding="8dp" >
+
+    <TextView
+        android:id="@+id/itemReminderId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:singleLine="true"
+        android:text="@string/dummy"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/itemMedicine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemReminderId"
+        android:text="@string/dummy"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/itemTime"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/itemMedicine"
+        android:gravity="right"
+        android:text="@string/dummy"
+        android:textSize="16sp" />
+
+</RelativeLayout>

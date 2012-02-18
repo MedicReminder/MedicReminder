@@ -1,7 +1,7 @@
 package be.bedroid.medreminder;
 
-import be.bedroid.medreminder.content.MedicineContentProvider;
-import be.bedroid.medreminder.model.Medicine;
+import be.bedroid.medreminder.content.ReminderContentProvider;
+import be.bedroid.medreminder.model.Reminder;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -24,7 +24,7 @@ import android.widget.TextView;
  * This sample provides a different layout (and activity flow) when run in
  * landscape.
  */
-public class MedsActivity extends FragmentActivity {
+public class RemindersActivity extends FragmentActivity {
 
 	// TODO: do not use static
 	private static String[] mColumns;
@@ -38,28 +38,28 @@ public class MedsActivity extends FragmentActivity {
 		setContentView(R.layout.fragment_layout);
 
 		mColumns = new String[] {
-				Medicine.ID,
-				Medicine.NAME,
-				Medicine.METHOD
+				Reminder.ID,
+				Reminder.MEDICINE_ID,
+				Reminder.TIME
 		};
 
 
 		mTo = new int[] {
-				R.id.itemMedicineId,
-				R.id.itemMedicineName,
-				R.id.itemMedicineMethod
+				R.id.itemReminderId,
+				R.id.itemMedicine,
+				R.id.itemTime
 		};
 
 
 		mManagedQuery = managedQuery(
-				MedicineContentProvider.CONTENT_URI,
+				ReminderContentProvider.CONTENT_URI,
 				mColumns,
 				null,
 				null,
 				null
 				);
 
-		mAdapter = new SimpleCursorAdapter(this, R.layout.list_item_medicine, mManagedQuery, mColumns, mTo);
+		mAdapter = new SimpleCursorAdapter(this, R.layout.list_item_reminder, mManagedQuery, mColumns, mTo);
 	}
 
 	/**

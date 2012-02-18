@@ -9,5 +9,9 @@
         android:id="@+id/medsMenu"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="@string/menuMeds"/>
+    <item
+        android:id="@+id/remindersMenu"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/menuReminders"/>
 
 </menu>

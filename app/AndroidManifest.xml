@@ -28,6 +28,14 @@
             android:label="@string/labelMedsActivity" >
         </activity>
         <activity
+            android:name=".RemindersActivity"
+            android:label="@string/labelRemindersActivity" >
+        </activity>
+        <activity
+            android:name=".RemindersActivity$DetailsActivity"
+            android:label="@string/labelRemindersActivity" >
+        </activity>
+        <activity
             android:name=".EditPreferencesActivity"
             android:label="@string/prefActivityLabel" >
         </activity>
@@ -37,13 +45,13 @@
         </activity>
 
         <provider
-		      android:name=".content.MedicineContentProvider"
-		      android:authorities="be.bedroid.medreminder.contentprovider.medicines" >
-	   </provider>  
+            android:name=".content.MedicineContentProvider"
+            android:authorities="be.bedroid.medreminder.contentprovider.medicines" >
+        </provider>
         <provider
-		      android:name=".content.ReminderContentProvider"
-		      android:authorities="be.bedroid.medreminder.contentprovider.reminders" >
-	   </provider>
+            android:name=".content.ReminderContentProvider"
+            android:authorities="be.bedroid.medreminder.contentprovider.reminders" >
+        </provider>
     </application>
 
 </manifest>

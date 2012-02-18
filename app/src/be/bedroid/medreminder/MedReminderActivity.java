@@ -70,6 +70,9 @@ public class MedReminderActivity extends Activity {
 		case R.id.medsMenu:
 			startActivity(new Intent(this, MedsActivity.class));
 			return true;
+		case R.id.remindersMenu:
+			startActivity(new Intent(this, RemindersActivity.class));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
