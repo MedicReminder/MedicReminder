@@ -3,7 +3,7 @@
 
     <item
           android:id="@+id/settingsMenu"
-          android:icon="@android:drawable/ic_menu_zoom"
+          android:icon="@android:drawable/ic_menu_edit"
 		  android:title="@string/menuSettings"/>
 
 </menu>
