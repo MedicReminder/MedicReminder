@@ -19,14 +19,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/itemReminderId"
         android:text="@string/dummy"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/itemTime"
+        android:id="@+id/itemReminderTime"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/itemMedicine"
-        android:gravity="right"
         android:text="@string/dummy"
         android:textSize="16sp" />
 

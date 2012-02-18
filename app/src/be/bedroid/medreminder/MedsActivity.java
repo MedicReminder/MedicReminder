@@ -35,7 +35,7 @@ public class MedsActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_layout);
+		setContentView(R.layout.fragment_meds);
 
 		mColumns = new String[] {
 				Medicine.ID,
@@ -114,7 +114,7 @@ public class MedsActivity extends FragmentActivity {
 
 			// Check to see if we have a frame in which to embed the details
 			// fragment directly in the containing UI.
-			View detailsFrame = getActivity().findViewById(R.id.details);
+			View detailsFrame = getActivity().findViewById(R.id.fragment_meds_details);
 			mDualPane = detailsFrame != null && detailsFrame.getVisibility() == View.VISIBLE;
 
 			if (savedInstanceState != null) {
@@ -156,7 +156,7 @@ public class MedsActivity extends FragmentActivity {
 
 				// Check what fragment is currently shown, replace if needed.
 				DetailsFragment details = (DetailsFragment)
-						getFragmentManager().findFragmentById(R.id.details);
+						getFragmentManager().findFragmentById(R.id.fragment_meds_details);
 				if (details == null || details.getShownIndex() != index) {
 					// Make new fragment to show this selection.
 					details = DetailsFragment.newInstance(index);
@@ -164,7 +164,7 @@ public class MedsActivity extends FragmentActivity {
 					// Execute a transaction, replacing any existing fragment
 					// with this one inside the frame.
 					FragmentTransaction ft = getFragmentManager().beginTransaction();
-					ft.replace(R.id.details, details);
+					ft.replace(R.id.fragment_meds_details, details);
 					ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 					ft.commit();
 				}

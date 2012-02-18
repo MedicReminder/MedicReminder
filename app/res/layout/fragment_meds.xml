@@ -3,7 +3,7 @@
     android:layout_height="match_parent" >
 
     <fragment
-        android:id="@+id/titles"
+        android:id="@+id/fragment_meds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="be.bedroid.medreminder.MedsActivity$TitlesFragment" />

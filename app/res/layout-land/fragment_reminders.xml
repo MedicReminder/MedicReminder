@@ -4,14 +4,14 @@
     android:orientation="horizontal" >
 
     <fragment
-        android:id="@+id/titles"
+        android:id="@+id/fragment_reminders"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1"
         class="be.bedroid.medreminder.MedsActivity$TitlesFragment" />
 
     <FrameLayout
-        android:id="@+id/details"
+        android:id="@+id/fragment_reminders_details"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1" />
