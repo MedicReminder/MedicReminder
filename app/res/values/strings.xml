@@ -19,6 +19,7 @@
     <string name="labelMedsActivity">Meds</string>
     <string name="labelRemindersActivity">Reminders</string>
     <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="labelAlertWithTtsActivity">Alert with TTS</string>
     <string name="menuRemindersAdd">Add</string>
     <string name="menuRemindersSort">Sort</string>
     <string name="menuRemindersSortByName">by name</string>

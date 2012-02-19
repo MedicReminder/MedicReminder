@@ -10,18 +10,27 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
-public class NotificationActivity extends Activity implements OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
+public class AlertWithTtsActivity extends Activity implements OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
 
-	private static final String LOG_TAG = NotificationActivity.class.getName();
+	private static final String LOG_TAG = AlertWithTtsActivity.class.getName();
 
 	private static final int MY_DATA_CHECK_CODE = 1;
 	private TextToSpeech mTts;
+	private TextView mTvAlertWithTts;
+	private String mMessage;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.alert_with_tts);
+
+		mMessage = "This is message is taken from an input extra";
+
+		mTvAlertWithTts = (TextView) findViewById(R.id.tvAlertWithTts);
+		mTvAlertWithTts.setText(mMessage);
 
 		Intent checkIntent = new Intent();
 		checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
@@ -58,8 +67,8 @@ public class NotificationActivity extends Activity implements OnInitListener, Te
 		int result = mTts.isLanguageAvailable(locale);
 		if (result == TextToSpeech.LANG_AVAILABLE) {
 			mTts.setLanguage(locale);
-			String myText1 = "This is the first sentence!";
-			String myText2 = "Is this the second sentence?";
+			String myText1 = mMessage;
+			String myText2 = "Once more " + mMessage;
 			HashMap<String, String> myHashAlarm = new HashMap<String, String>();
 			mTts.setOnUtteranceCompletedListener(this);
 			myHashAlarm.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_ALARM));
@@ -77,5 +86,10 @@ public class NotificationActivity extends Activity implements OnInitListener, Te
 		if (uttId == "end of wakeup message ID") {
 			Log.i(LOG_TAG, "End of wakeup message");
 		}
+	}
+
+
+	public void close(View view) {
+		finish();
 	}
 }
