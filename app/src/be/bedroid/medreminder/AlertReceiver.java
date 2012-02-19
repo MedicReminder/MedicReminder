@@ -8,6 +8,8 @@ import android.util.Log;
 
 public class AlertReceiver extends BroadcastReceiver {
 
+	public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
+
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Log.v("AlertReceiver", "Received Alert");

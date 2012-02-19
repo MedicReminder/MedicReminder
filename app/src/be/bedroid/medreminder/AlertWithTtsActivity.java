@@ -3,7 +3,6 @@ package be.bedroid.medreminder;
 import java.util.HashMap;
 import java.util.Locale;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -20,14 +19,17 @@ public class AlertWithTtsActivity extends AbstractActivity implements OnInitList
 	private static final int MY_DATA_CHECK_CODE = 1;
 	private TextToSpeech mTts;
 	private TextView mTvAlertWithTts;
-	private String mMessage;
+	private String mMessage = "";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.alert_with_tts);
 
-		mMessage = "This is message is taken from an input extra";
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			mMessage = extras.getString(AlertReceiver.EXTRA_MESSAGE);
+		}
 
 		mTvAlertWithTts = (TextView) findViewById(R.id.tvAlertWithTts);
 		mTvAlertWithTts.setText(mMessage);
