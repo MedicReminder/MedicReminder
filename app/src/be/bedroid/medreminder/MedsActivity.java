@@ -1,7 +1,5 @@
 package be.bedroid.medreminder;
 
-import be.bedroid.medreminder.content.MedicineContentProvider;
-import be.bedroid.medreminder.model.Medicine;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -18,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import be.bedroid.medreminder.content.MedicineContentProvider;
+import be.bedroid.medreminder.model.Medicine;
 
 /**
  * Demonstration of using fragments to implement different activity layouts.
@@ -37,34 +37,18 @@ public class MedsActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_meds);
 
-		mColumns = new String[] {
-				Medicine.ID,
-				Medicine.NAME,
-				Medicine.METHOD
-		};
+		mColumns = new String[] { Medicine.ID, Medicine.NAME, Medicine.METHOD };
 
+		mTo = new int[] { R.id.itemMedicineId, R.id.itemMedicineName, R.id.itemMedicineMethod };
 
-		mTo = new int[] {
-				R.id.itemMedicineId,
-				R.id.itemMedicineName,
-				R.id.itemMedicineMethod
-		};
-
-
-		mManagedQuery = managedQuery(
-				MedicineContentProvider.CONTENT_URI,
-				mColumns,
-				null,
-				null,
-				null
-				);
+		mManagedQuery = managedQuery(MedicineContentProvider.CONTENT_URI, mColumns, null, null, null);
 
 		mAdapter = new SimpleCursorAdapter(this, R.layout.list_item_medicine, mManagedQuery, mColumns, mTo);
 	}
 
 	/**
-	 * This is a secondary activity, to show what the user has selected
-	 * when the screen is not large enough to show it all in one activity.
+	 * This is a secondary activity, to show what the user has selected when the
+	 * screen is not large enough to show it all in one activity.
 	 */
 	public static class DetailsActivity extends FragmentActivity {
 
@@ -72,8 +56,7 @@ public class MedsActivity extends FragmentActivity {
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 
-			if (getResources().getConfiguration().orientation
-					== Configuration.ORIENTATION_LANDSCAPE) {
+			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 				// If the screen is now in landscape mode, we can show the
 				// dialog in-line with the list so we don't need this activity.
 				finish();
@@ -91,9 +74,9 @@ public class MedsActivity extends FragmentActivity {
 	}
 
 	/**
-	 * This is the "top-level" fragment, showing a list of items that the
-	 * user can pick.  Upon picking an item, it takes care of displaying the
-	 * data to the user as appropriate based on the currrent UI layout.
+	 * This is the "top-level" fragment, showing a list of items that the user
+	 * can pick. Upon picking an item, it takes care of displaying the data to
+	 * the user as appropriate based on the currrent UI layout.
 	 */
 	public static class TitlesFragment extends ListFragment {
 		boolean mDualPane;
@@ -105,12 +88,11 @@ public class MedsActivity extends FragmentActivity {
 
 			// Populate list with our static array of titles.
 			/*
-			setListAdapter(new ArrayAdapter<String>(getActivity(),
-					android.R.layout.simple_list_item_1, MEDS));
+			 * setListAdapter(new ArrayAdapter<String>(getActivity(),
+			 * android.R.layout.simple_list_item_1, MEDS));
 			 */
 
 			setListAdapter(mAdapter);
-
 
 			// Check to see if we have a frame in which to embed the details
 			// fragment directly in the containing UI.
@@ -123,7 +105,8 @@ public class MedsActivity extends FragmentActivity {
 			}
 
 			if (mDualPane) {
-				// In dual-pane mode, the list view highlights the selected item.
+				// In dual-pane mode, the list view highlights the selected
+				// item.
 				getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 				// Make sure our UI is in the correct state.
 				showDetails(mCurCheckPosition);
@@ -143,8 +126,8 @@ public class MedsActivity extends FragmentActivity {
 
 		/**
 		 * Helper function to show the details of a selected item, either by
-		 * displaying a fragment in-place in the current UI, or starting a
-		 * whole new activity in which it is displayed.
+		 * displaying a fragment in-place in the current UI, or starting a whole
+		 * new activity in which it is displayed.
 		 */
 		void showDetails(int index) {
 			mCurCheckPosition = index;
@@ -155,8 +138,7 @@ public class MedsActivity extends FragmentActivity {
 				getListView().setItemChecked(index, true);
 
 				// Check what fragment is currently shown, replace if needed.
-				DetailsFragment details = (DetailsFragment)
-						getFragmentManager().findFragmentById(R.id.fragment_meds_details);
+				DetailsFragment details = (DetailsFragment) getFragmentManager().findFragmentById(R.id.fragment_meds_details);
 				if (details == null || details.getShownIndex() != index) {
 					// Make new fragment to show this selection.
 					details = DetailsFragment.newInstance(index);
@@ -180,15 +162,14 @@ public class MedsActivity extends FragmentActivity {
 		}
 	}
 
-
 	/**
 	 * This is the secondary fragment, displaying the details of a particular
 	 * item.
 	 */
 	public static class DetailsFragment extends Fragment {
 		/**
-		 * Create a new instance of DetailsFragment, initialized to
-		 * show the text at 'index'.
+		 * Create a new instance of DetailsFragment, initialized to show the
+		 * text at 'index'.
 		 */
 		public static DetailsFragment newInstance(int index) {
 			DetailsFragment f = new DetailsFragment();
@@ -206,14 +187,13 @@ public class MedsActivity extends FragmentActivity {
 		}
 
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
+		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			if (container == null) {
 				// We have different layouts, and in one of them this
-				// fragment's containing frame doesn't exist.  The fragment
+				// fragment's containing frame doesn't exist. The fragment
 				// may still be created from its saved state, but there is
 				// no reason to try to create its view hierarchy because it
-				// won't be displayed.  Note this is not needed -- we could
+				// won't be displayed. Note this is not needed -- we could
 				// just run the code below, where we would create and return
 				// the view hierarchy; it would just never be used.
 				return null;
@@ -221,11 +201,10 @@ public class MedsActivity extends FragmentActivity {
 
 			ScrollView scroller = new ScrollView(getActivity());
 			TextView text = new TextView(getActivity());
-			int padding = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-					4, getActivity().getResources().getDisplayMetrics());
+			int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getActivity().getResources().getDisplayMetrics());
 			text.setPadding(padding, padding, padding, padding);
 			scroller.addView(text);
-			//text.setText(MEDS[getShownIndex()]);
+			// text.setText(MEDS[getShownIndex()]);
 			text.setText("TODO");
 			return scroller;
 		}

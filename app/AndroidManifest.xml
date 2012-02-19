@@ -43,8 +43,6 @@
             android:name=".NotificationActivity"
             android:label="@string/labelNotificationActivity" >
         </activity>
-
-
         <activity
             android:label="@string/app_name"
             android:name=".AlertTestLauncher" >
@@ -55,43 +53,30 @@
         </activity>
         <activity
             android:label="@string/app_name"
-            android:name=".AlertActivity"
+            android:name=".MedDetailActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
-        <receiver android:name="be.bedroid.medreminder.AlertReceiver" >
-        </receiver>
-        <activity
-            android:label="@string/app_name"
-            android:name=".AlertTestLauncher" >
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
+            
+            <activity
             android:label="@string/app_name"
             android:name=".AlertActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
-        <receiver android:name="be.bedroid.medreminder.AlertReceiver" >
-        </receiver>
+        <receiver android:name="be.bedroid.medreminder.AlertReceiver" />
         
         <provider
             android:name=".content.MedicineContentProvider"
             android:authorities="be.bedroid.medreminder.contentprovider.medicines" >
         </provider>
+        
         <provider
             android:name=".content.ReminderContentProvider"
+            android:authorities="be.bedroid.medreminder.contentprovider.reminders" >
+        </provider>
+        
+        <provider
+            android:name=".content.MyMedicineContentProvider"
             android:authorities="be.bedroid.medreminder.contentprovider.reminders" >
         </provider>
     </application>

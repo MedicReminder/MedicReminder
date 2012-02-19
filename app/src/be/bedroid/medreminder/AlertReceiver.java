@@ -13,13 +13,14 @@ public class AlertReceiver extends BroadcastReceiver {
 		Log.v("AlertReceiver", "Received Alert");
 
 		Bundle bundle = intent.getExtras();
-		String message = bundle.getString("message");
-		Log.v("AlertReceiver", "Received message " + message);
+		String medname = bundle.getString("medname");
+
+		Log.v("AlertReceiver", "Received message " + medname);
 		Intent alertIntent = new Intent(context, AlertActivity.class);
 		alertIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		alertIntent.putExtra("medname", medname);
 		// addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(alertIntent);
 
 	}
-
 }
