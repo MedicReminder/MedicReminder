@@ -1,2 +1,10 @@
 /gen
 /bin
+.classpath
+app/.project
+local.properties
+build.xml
+bin/
+.classpath
+project.properties
+gen/

@@ -55,6 +55,9 @@ public class MedReminderActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case R.id.alarmMenu:
+			startActivity(new Intent(this, AlertTestLauncher.class));
+			return true;
 		case R.id.settingsMenu:
 			Intent intent = new Intent(this, EditPreferencesActivity.class);
 			startActivity(intent);
@@ -69,10 +72,12 @@ public class MedReminderActivity extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+
 	public void onProgressUpdate(String... args){
         // here you will have to update the progressbar
         // with something like
         mProgressDialog.setProgress(Integer.parseInt(args[0]));
     }
 }
+
+

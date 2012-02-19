@@ -12,16 +12,19 @@
     <string name="prefTimeNoon">Noon</string>
     <string name="prefTimeEvening">Evening</string>
     <string name="prefBedtime">Bedtime</string>
+    <string name="menuAlarm">Alarm</string>
     <string name="menuMeds">Meds</string>
     <string name="menuReminders">Reminders</string>
     <string name="menuSettings">Settings</string>
     <string name="labelMedsActivity">Meds</string>
     <string name="labelRemindersActivity">Reminders</string>
     <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="labelAlertWithTtsActivity">Alert with TTS</string>
     <string name="menuRemindersAdd">Add</string>
     <string name="menuRemindersSort">Sort</string>
     <string name="menuRemindersSortByName">by name</string>
     <string name="menuRemindersSortByTime">by time</string>
     <string name="dummy">TODO</string>
+    <string name="errorTtsLangNotAvailable">TTS language not available: %1$s</string>
 
 </resources>
