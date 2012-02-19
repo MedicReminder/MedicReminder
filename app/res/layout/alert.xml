@@ -10,7 +10,7 @@
         android:id="@+id/alertMessage"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Please take your .. pill"
+        android:text="@string/messageTakeMeds"
         android:textSize="64px"
         android:layout_marginLeft="50px"
         android:layout_marginTop="100px"/>

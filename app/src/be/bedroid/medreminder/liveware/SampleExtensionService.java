@@ -9,15 +9,10 @@ import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
 import com.sonyericsson.extras.liveware.extension.util.notification.NotificationUtil;
 import com.sonyericsson.extras.liveware.extension.util.registration.RegistrationInformation;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
-import android.os.SystemClock;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -42,12 +37,6 @@ public class SampleExtensionService extends ExtensionService {
 	 */
 	public static final String LOG_TAG = "MedReminderSmartService";
 
-
-	/**
-	 * Time between new data insertion
-	 */
-	private static final long INTERVAL = 10 * 1000;
-
 	/**
 	 * Starts periodic insert of data handled in onStartCommand()
 	 */
@@ -58,10 +47,6 @@ public class SampleExtensionService extends ExtensionService {
 	 */
 	public static final String INTENT_ACTION_STOP = "com.sonyericsson.extras.liveware.extension.notificationsample.action.stop";
 
-	/**
-	 * Add data, handled in onStartCommand()
-	 */
-	private static final String INTENT_ACTION_ADD = "com.sonyericsson.extras.liveware.extension.notificationsample.action.add";
 
 	public SampleExtensionService() {
 		super(EXTENSION_KEY);
@@ -89,19 +74,6 @@ public class SampleExtensionService extends ExtensionService {
 		if (intent != null) {
 			String message = intent.getStringExtra(AlertReceiver.EXTRA_MESSAGE);
 			Log.i(LOG_TAG, "Received message: " + message);
-			if (INTENT_ACTION_START.equals(intent.getAction())) {
-				Log.d(LOG_TAG, "onStart action: INTENT_ACTION_START");
-				startAddData();
-				stopSelfCheck();
-			} else if (INTENT_ACTION_STOP.equals(intent.getAction())) {
-				Log.d(LOG_TAG, "onStart action: INTENT_ACTION_STOP");
-				stopAddData();
-				stopSelfCheck();
-			} else if (INTENT_ACTION_ADD.equals(intent.getAction())) {
-				Log.d(LOG_TAG, "onStart action: INTENT_ACTION_ADD");
-				addData("default name", "default message");
-				stopSelfCheck();
-			}
 			if (message != null) {
 				addData("MedReminder", message);
 				stopSelfCheck();
@@ -120,29 +92,6 @@ public class SampleExtensionService extends ExtensionService {
 	public void onDestroy() {
 		super.onDestroy();
 		Log.d(LOG_TAG, "onDestroy");
-	}
-
-	/**
-	 * Start periodic data insertion into event table
-	 */
-	private void startAddData() {
-		AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-		Intent i = new Intent(this, SampleExtensionService.class);
-		i.setAction(INTENT_ACTION_ADD);
-		PendingIntent pi = PendingIntent.getService(this, 0, i, 0);
-		am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(),
-				INTERVAL, pi);
-	}
-
-	/**
-	 * Cancel scheduled data insertion
-	 */
-	private void stopAddData() {
-		AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-		Intent i = new Intent(this, SampleExtensionService.class);
-		i.setAction(INTENT_ACTION_ADD);
-		PendingIntent pi = PendingIntent.getService(this, 0, i, 0);
-		am.cancel(pi);
 	}
 
 
@@ -235,17 +184,6 @@ public class SampleExtensionService extends ExtensionService {
 	public void onRegisterResult(boolean result) {
 		super.onRegisterResult(result);
 		Log.d(LOG_TAG, "onRegisterResult");
-
-		// Start adding data if extension is active in preferences
-		if (result) {
-			SharedPreferences prefs = PreferenceManager
-					.getDefaultSharedPreferences(this);
-			boolean isActive = prefs.getBoolean(
-					getString(R.string.preference_key_is_active), false);
-			if (isActive) {
-				startAddData();
-			}
-		}
 	}
 
 	@Override
