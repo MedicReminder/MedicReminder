@@ -12,6 +12,7 @@
     <string name="prefTimeNoon">Noon</string>
     <string name="prefTimeEvening">Evening</string>
     <string name="prefBedtime">Bedtime</string>
+    <string name="menuAlarm">Alarm</string>
     <string name="menuMeds">Meds</string>
     <string name="menuReminders">Reminders</string>
     <string name="menuSettings">Settings</string>

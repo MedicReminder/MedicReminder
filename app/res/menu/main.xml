@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/alarmMenu"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/menuAlarm"/>
+    <item
         android:id="@+id/settingsMenu"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="@string/menuSettings"/>

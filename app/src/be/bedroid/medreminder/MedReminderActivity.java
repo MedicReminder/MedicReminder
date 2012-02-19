@@ -63,6 +63,9 @@ public class MedReminderActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case R.id.alarmMenu:
+			startActivity(new Intent(this, AlertTestLauncher.class));
+			return true;
 		case R.id.settingsMenu:
 			Intent intent = new Intent(this, EditPreferencesActivity.class);
 			startActivity(intent);
