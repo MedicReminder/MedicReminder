@@ -1,5 +1,6 @@
 package be.bedroid.medreminder.liveware;
 
+import be.bedroid.medreminder.AlertReceiver;
 import be.bedroid.medreminder.R;
 
 import com.sonyericsson.extras.liveware.aef.notification.Notification;
@@ -86,6 +87,8 @@ public class SampleExtensionService extends ExtensionService {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		int retVal = super.onStartCommand(intent, flags, startId);
 		if (intent != null) {
+			String message = intent.getStringExtra(AlertReceiver.EXTRA_MESSAGE);
+			Log.i(LOG_TAG, "Received message: " + message);
 			if (INTENT_ACTION_START.equals(intent.getAction())) {
 				Log.d(LOG_TAG, "onStart action: INTENT_ACTION_START");
 				startAddData();
@@ -96,7 +99,11 @@ public class SampleExtensionService extends ExtensionService {
 				stopSelfCheck();
 			} else if (INTENT_ACTION_ADD.equals(intent.getAction())) {
 				Log.d(LOG_TAG, "onStart action: INTENT_ACTION_ADD");
-				addData();
+				addData("default name", "default message");
+				stopSelfCheck();
+			}
+			if (message != null) {
+				addData("MedReminder", message);
 				stopSelfCheck();
 			}
 		}
@@ -138,15 +145,10 @@ public class SampleExtensionService extends ExtensionService {
 		am.cancel(pi);
 	}
 
-	/**
-	 * Add some "random" data
-	 */
-	private void addData() {
-		String name = "event name";
-		String message = "event message";
+
+	private void addData(String name, String message) {
 		long time = System.currentTimeMillis();
-		long sourceId = NotificationUtil
-				.getSourceId(this, EXTENSION_SPECIFIC_ID);
+		long sourceId = NotificationUtil.getSourceId(this, EXTENSION_SPECIFIC_ID);
 		if (sourceId == NotificationUtil.INVALID_ID) {
 			Log.e(LOG_TAG, "Failed to insert data");
 			return;

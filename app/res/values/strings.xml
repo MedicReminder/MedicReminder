@@ -28,6 +28,7 @@
     <string name="errorTtsLangNotAvailable">TTS language not available: %1$s</string>
     <string name="search_label">Search</string>
     <string name="search_hint">Hint</string>
+    <string name="messageTakeMeds">Take your meds!</string>
 
     <!-- Title of preference activity -->
     <string name="preference_activity_title">MedReminder Smart Settings</string>

@@ -32,7 +32,7 @@ public class AlertTestLauncher extends Activity {
 		Log.v("MedReminderActivity", String.format("Alert will go off at %s", calendar.toString()));
 
 		Intent intent = new Intent(this, AlertReceiver.class);
-		intent.putExtra("message", "test");
+		intent.putExtra("message", getString(R.string.messageTakeMeds));
 		PendingIntent sender = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
 		AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
