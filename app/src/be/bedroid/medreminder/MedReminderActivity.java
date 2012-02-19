@@ -1,10 +1,13 @@
 package be.bedroid.medreminder;
 
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,40 +15,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import be.bedroid.medreminder.content.MedicineContentProvider;
 import be.bedroid.medreminder.content.ReminderContentProvider;
-import be.bedroid.medreminder.content.mapper.MedicineMapper;
-import be.bedroid.medreminder.content.mapper.ReminderMapper;
+import be.bedroid.medreminder.content.download.DownloadFile;
 import be.bedroid.medreminder.model.Medicine;
-import be.bedroid.medreminder.model.Reminder;
 
 
 public class MedReminderActivity extends Activity {
 
+	private ProgressDialog mProgressDialog = null;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
 		OnClickListener testButton = new OnClickListener() {
-			public void onClick(View v) {
-				Cursor cursor = getContentResolver().query(
-						MedicineContentProvider.CONTENT_URI,
-						new String[] {Reminder.ID, "name", "method"},
-						"name LIKE ?",
-						new String[] {"%2%"},
-						null);
-
-				List<Medicine> medicines = MedicineMapper.mapCursorToMedicines(cursor);
-
-				cursor = getContentResolver().query(
-						ReminderContentProvider.CONTENT_URI,
-						new String[] {Medicine.ID, "medicine_id", "time"},
-						null,
-						null,
-						null);
-
-				List<Reminder> reminders = ReminderMapper.mapCursorToReminders(cursor);
+			public void onClick(View v) {			
+				mProgressDialog = new ProgressDialog(MedReminderActivity.this);
+				mProgressDialog.setMessage("A message");
+				mProgressDialog.setIndeterminate(false);
+				mProgressDialog.setMax(100);
+				mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+				DownloadFile downloadFile = new DownloadFile(MedReminderActivity.this);
+				downloadFile.execute("http://www.cautreels.be/medicines.json");
 			}
 		};
 
@@ -77,4 +69,10 @@ public class MedReminderActivity extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+	
+	public void onProgressUpdate(String... args){
+        // here you will have to update the progressbar
+        // with something like
+        mProgressDialog.setProgress(Integer.parseInt(args[0]));
+    }
 }
