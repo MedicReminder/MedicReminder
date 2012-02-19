@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class AlertWithTtsActivity extends Activity implements OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
+public class AlertWithTtsActivity extends AbstractActivity implements OnInitListener, TextToSpeech.OnUtteranceCompletedListener {
 
 	private static final String LOG_TAG = AlertWithTtsActivity.class.getName();
 
@@ -77,7 +77,9 @@ public class AlertWithTtsActivity extends Activity implements OnInitListener, Te
 			// myHashAlarm now contains two optional parameters
 			mTts.speak(myText2, TextToSpeech.QUEUE_ADD, myHashAlarm);
 		} else {
-			Log.i(LOG_TAG, "Language not available");
+			String errorMessage = String.format(getString(R.string.errorTtsLangNotAvailable), locale.toString());
+			toast(errorMessage);
+			Log.i(LOG_TAG, errorMessage);
 		}
 	}
 
