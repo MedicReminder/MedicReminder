@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MedReminderActivity!</string>
     <string name="app_name">MedReminder</string>
     <string name="prefCategoryAlerts">Alerts</string>
     <string name="prefCategoryTiming">Timing</string>
@@ -16,13 +15,43 @@
     <string name="menuMeds">Meds</string>
     <string name="menuReminders">Reminders</string>
     <string name="menuSettings">Settings</string>
+    <string name="menuSmart">SmartWatch</string>
     <string name="labelMedsActivity">Meds</string>
     <string name="labelRemindersActivity">Reminders</string>
-    <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="labelSmartPreferencesActivity">SmartWatch</string>
+    <string name="labelAlertWithTtsActivity">Alert with TTS</string>
     <string name="menuRemindersAdd">Add</string>
     <string name="menuRemindersSort">Sort</string>
     <string name="menuRemindersSortByName">by name</string>
     <string name="menuRemindersSortByTime">by time</string>
     <string name="dummy">TODO</string>
+    <string name="errorTtsLangNotAvailable">TTS language not available: %1$s</string>
+    <string name="search_label">Search</string>
+    <string name="search_hint">Hint</string>
+    <string name="messageTakeMeds">Please take your pill!</string>
+
+    <!-- Title of preference activity -->
+    <string name="preference_activity_title">MedReminder Smart Settings</string>
+    <!-- Configuration text shown in preferences -->
+    <string name="configuration_text">MedReminder Smart Settings</string>
+    <!-- Extension name, shown in preferences -->
+    <string name="extension_name">MedReminder Smart</string>
+    <!-- Name of source, shown in preferences -->
+    <string name="source_name">MedReminder Smart source</string>
+    <!-- Action Toast, shown on accessory -->
+    <string name="action_event_1">Action Toast</string>
+    <!-- Text that is read before the display name on accessories that supports text to speech -->
+    <string name="text_to_speech">New sample notification event from</string>
+    <string name="preference_option_read_me">README</string>
+    <string name="preference_key_read_me">preference_key_read_me</string>
+    <string name="preference_option_read_me_txt">1. Check menu option Active to generate events based on a static timer.\n\n2. Uncheck menu option Active to cancel the event generator.\n\n3. Tap Clear All Events to remove all events.</string>
+    <string name="preference_option_is_active">Active</string>
+    <string name="preference_key_is_active">preference_key_is_active</string>
+    <string name="preference_option_clear">Clear All Events</string>
+    <string name="preference_option_clear_txt">"All sample events on device will be cleared, continue?"</string>
+    <string name="preference_key_clear">preference_key_clear</string>
+    <string name="working">Working...</string>
+    <string name="clear_success">All events have been deleted</string>
+    <string name="clear_failure">Failed to delete events</string>
 
 </resources>
