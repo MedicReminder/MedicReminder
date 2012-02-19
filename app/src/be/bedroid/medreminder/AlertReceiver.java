@@ -17,10 +17,12 @@ public class AlertReceiver extends BroadcastReceiver {
 		Bundle bundle = intent.getExtras();
 		String message = bundle.getString("message");
 		Log.v("AlertReceiver", "Received message " + message);
-		Intent alertIntent = new Intent(context, AlertWithTtsActivity.class);
+		Intent alertIntent = new Intent(context, AlertActivity.class);
 		alertIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		// addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(alertIntent);
+		
+		// TODO: start Sony smart service
 
 	}
 

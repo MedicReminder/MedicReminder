@@ -1,34 +1,3 @@
-
-/*
-Copyright (c) 2011, Sony Ericsson Mobile Communications AB
-
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
- * Redistributions of source code must retain the above copyright notice, this
-  list of conditions and the following disclaimer.
-
- * Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
-
- * Neither the name of the Sony Ericsson Mobile Communications AB nor the names
-  of its contributors may be used to endorse or promote products derived from
-  this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
 package be.bedroid.medreminder.liveware;
 
 import be.bedroid.medreminder.R;
@@ -51,8 +20,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import java.util.Random;
-
 /**
  * The sample extension service handles extension registration and inserts
  * data into the notification database.
@@ -72,21 +39,8 @@ public class SampleExtensionService extends ExtensionService {
 	/**
 	 * Log tag
 	 */
-	public static final String LOG_TAG = "SampleNotificationExtension";
+	public static final String LOG_TAG = "MedReminderSmartService";
 
-	/**
-	 * Event names
-	 */
-	private static final String[] NAMES = new String[] {
-		"Name A", "Name B", "Name C", "Name D", "Name D", "Name E",
-	};
-
-	/**
-	 * Event messages
-	 */
-	private static final String[] MESSAGE = new String[] {
-		"Message 1", "Message 2", "Message 3", "Message 4", "Message 5", "Message 6",
-	};
 
 	/**
 	 * Time between new data insertion
@@ -188,10 +142,8 @@ public class SampleExtensionService extends ExtensionService {
 	 * Add some "random" data
 	 */
 	private void addData() {
-		Random rand = new Random();
-		int index = rand.nextInt(5);
-		String name = NAMES[index];
-		String message = MESSAGE[index];
+		String name = "event name";
+		String message = "event message";
 		long time = System.currentTimeMillis();
 		long sourceId = NotificationUtil
 				.getSourceId(this, EXTENSION_SPECIFIC_ID);

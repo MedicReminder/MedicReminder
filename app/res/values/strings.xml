@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MedReminderActivity!</string>
     <string name="app_name">MedReminder</string>
     <string name="prefCategoryAlerts">Alerts</string>
     <string name="prefCategoryTiming">Timing</string>
@@ -31,18 +30,18 @@
     <string name="search_hint">Hint</string>
 
     <!-- Title of preference activity -->
-    <string name="preference_activity_title">Sample notification Settings</string>
+    <string name="preference_activity_title">MedReminder Smart Settings</string>
     <!-- Configuration text shown in preferences -->
-    <string name="configuration_text">Sample notification settings</string>
+    <string name="configuration_text">MedReminder Smart Settings</string>
     <!-- Extension name, shown in preferences -->
-    <string name="extension_name">Sample notification</string>
+    <string name="extension_name">MedReminder Smart</string>
     <!-- Name of source, shown in preferences -->
-    <string name="source_name">Sample notification source</string>
+    <string name="source_name">MedReminder Smart source</string>
     <!-- Action Toast, shown on accessory -->
     <string name="action_event_1">Action Toast</string>
     <!-- Text that is read before the display name on accessories that supports text to speech -->
     <string name="text_to_speech">New sample notification event from</string>
-    <string name="preference_option_read_me">READ ME</string>
+    <string name="preference_option_read_me">README</string>
     <string name="preference_key_read_me">preference_key_read_me</string>
     <string name="preference_option_read_me_txt">1. Check menu option Active to generate events based on a static timer.\n\n2. Uncheck menu option Active to cancel the event generator.\n\n3. Tap Clear All Events to remove all events.</string>
     <string name="preference_option_is_active">Active</string>
