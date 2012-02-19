@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hoi wereld, MedReminderActivity!</string>
+    <string name="app_name">MedReminder</string>
+    <string name="prefCategoryAlerts">Waarschuwingen</string>
+    <string name="prefCategoryTiming">Timing</string>
+    <string name="prefSmsTitle">GSM voor SMS-boodschappen</string>
+    <string name="prefSmsSummary">Het telefoonnummer van de persoon, die op de hoogte gebracht moeten worden, als er niet wordt gereageerd op de herinneringen.</string>
+    <string name="prefActivityLabel">Instellingen</string>
+    <string name="prefTimeMorning">Ochtend</string>
+    <string name="prefTimeNoon">Middag</string>
+    <string name="prefTimeEvening">Avond</string>
+    <string name="prefBedtime">Voor \'t slapengaan</string>
+    <string name="menuAlarm">Alarm</string>
+    <string name="menuMeds">Medicijnen</string>
+    <string name="menuReminders">Herinneringen</string>
+    <string name="menuSettings">Instellingen</string>
+    <string name="labelMedsActivity">Medicatie</string>
+    <string name="labelRemindersActivity">Herinneringen</string>
+    <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="labelAlertWithTtsActivity">Herinnering met spraaksynthese</string>
+    <string name="menuRemindersAdd">Toevoegen</string>
+    <string name="menuRemindersSort">Sorteren</string>
+    <string name="menuRemindersSortByName">op naam</string>
+    <string name="menuRemindersSortByTime">op tijdstip</string>
+    <string name="dummy">TODO</string>
+    <string name="errorTtsLangNotAvailable">Er is spraaksynthese mogelijk voor deze taal: %1$s</string>
+
+</resources>
