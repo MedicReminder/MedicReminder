@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Salut au monde, MedReminderActivity!</string>
+    <string name="app_name">MedReminder</string>
+    <string name="prefCategoryAlerts">Alertes</string>
+    <string name="prefCategoryTiming">Timing</string>
+    <string name="prefSmsTitle">GSM pour les message SMS</string>
+    <string name="prefSmsSummary">Le numéro de GSM de la personne qui doît être averti, s\'il n\'y a pas de réaction aux alertes.</string>
+    <string name="prefActivityLabel">Configuration</string>
+    <string name="prefTimeMorning">Le matin</string>
+    <string name="prefTimeNoon">À midi</string>
+    <string name="prefTimeEvening">Le soir</string>
+    <string name="prefBedtime">Avant de se coucher</string>
+    <string name="menuAlarm">Alerte</string>
+    <string name="menuMeds">Médications</string>
+    <string name="menuReminders">Alertes</string>
+    <string name="menuSettings">Configuration</string>
+    <string name="labelMedsActivity">Médication</string>
+    <string name="labelRemindersActivity">Alertes</string>
+    <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="labelAlertWithTtsActivity">Rappel à l\'aide de synthèse de voix</string>
+    <string name="menuRemindersAdd">Ajouter</string>
+    <string name="menuRemindersSort">Ordonner</string>
+    <string name="menuRemindersSortByName">sur nom</string>
+    <string name="menuRemindersSortByTime">sur temps</string>
+    <string name="dummy">TODO</string>
+    <string name="errorTtsLangNotAvailable">Il n\'y à pas de support pour la synthèse de voix pour cette langue: %1$s</string>
+
+</resources>
