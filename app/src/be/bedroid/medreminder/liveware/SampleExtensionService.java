@@ -163,6 +163,9 @@ public class SampleExtensionService extends ExtensionService {
 			String toastMessage = getText(R.string.action_event_1) + ", Event: " + eventId
 					+ ", Name: " + name + ", Message: " + message;
 			Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
+			// Deleting all the previous messages because
+			// we received a confirmation from the watch.
+			getContentResolver().delete(Notification.Event.URI, null, null);
 		} catch (SQLException e) {
 			Log.e(LOG_TAG, "Failed to query event", e);
 		} catch (SecurityException e) {
