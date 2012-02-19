@@ -5,5 +5,7 @@
 	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="libs/com_sonyericsson_extras_liveware_extension_util.jar"/>
+	<classpathentry kind="lib" path="libs/extensionapi.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
