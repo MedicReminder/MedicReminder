@@ -6,11 +6,15 @@
 
     <uses-sdk android:minSdkVersion="4" />
     <uses-sdk android:targetSdkVersion="10" />
-    
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
 
     <application
         android:icon="@drawable/ic_logo"
@@ -23,10 +27,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
+
             <meta-data
-				android:name="android.app.default_searchable"
-				android:value=".SearchResultsActivity" />
+                android:name="android.app.default_searchable"
+                android:value=".SearchResultsActivity" />
         </activity>
         <activity
             android:name=".MedsActivity"
@@ -47,6 +51,10 @@
         <activity
             android:name=".EditPreferencesActivity"
             android:label="@string/prefActivityLabel" >
+        </activity>
+        <activity
+            android:name=".SmartPreferencesActivity"
+            android:label="@string/labelSmartPreferencesActivity" >
         </activity>
         <activity
             android:name=".NotificationActivity"
@@ -98,18 +106,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
-			android:name=".SearchResultsActivity"
-			android:label="@string/app_name">
-			<intent-filter>
-				<action android:name="android.intent.action.SEARCH" />
-			</intent-filter>
-			<meta-data
-				android:name="android.app.searchable"
-				android:resource="@xml/searchable" />
+            android:name=".SearchResultsActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
 
-		</activity>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
 
         <receiver android:name="be.bedroid.medreminder.AlertReceiver" >
         </receiver>

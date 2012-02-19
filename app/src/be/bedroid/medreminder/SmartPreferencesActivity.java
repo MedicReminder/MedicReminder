@@ -29,9 +29,10 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package be.bedroid.medreminder.liveware;
+package be.bedroid.medreminder;
 
 import be.bedroid.medreminder.R;
+import be.bedroid.medreminder.liveware.SampleExtensionService;
 
 import com.sonyericsson.extras.liveware.extension.util.ExtensionUtils;
 import com.sonyericsson.extras.liveware.extension.util.notification.NotificationUtil;
@@ -56,7 +57,7 @@ import android.widget.Toast;
  * data insertion. It also allows the user to clear all events associated with
  * this extension.
  */
-public class SamplePreferenceActivity extends PreferenceActivity {
+public class SmartPreferencesActivity extends PreferenceActivity {
 
 	private static final int DIALOG_READ_ME = 1;
 
@@ -197,16 +198,16 @@ public class SamplePreferenceActivity extends PreferenceActivity {
 
 		protected Integer doInBackground(Void... params) {
 			int nbrDeleted = 0;
-			nbrDeleted = NotificationUtil.deleteAllEvents(SamplePreferenceActivity.this);
+			nbrDeleted = NotificationUtil.deleteAllEvents(SmartPreferencesActivity.this);
 			return nbrDeleted;
 		}
 
 		protected void onPostExecute(Integer id) {
 			if (id != NotificationUtil.INVALID_ID) {
-				Toast.makeText(SamplePreferenceActivity.this, R.string.clear_success,
+				Toast.makeText(SmartPreferencesActivity.this, R.string.clear_success,
 						Toast.LENGTH_SHORT).show();
 			} else {
-				Toast.makeText(SamplePreferenceActivity.this, R.string.clear_failure,
+				Toast.makeText(SmartPreferencesActivity.this, R.string.clear_failure,
 						Toast.LENGTH_SHORT).show();
 			}
 		}

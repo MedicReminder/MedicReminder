@@ -23,7 +23,7 @@ import be.bedroid.medreminder.model.Medicine;
 public class MedReminderActivity extends Activity {
 
 	private ProgressDialog mProgressDialog = null;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -68,16 +68,19 @@ public class MedReminderActivity extends Activity {
 		case R.id.remindersMenu:
 			startActivity(new Intent(this, RemindersActivity.class));
 			return true;
+		case R.id.smartMenu:
+			startActivity(new Intent(this, SmartPreferencesActivity.class));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 
 	public void onProgressUpdate(String... args){
-        // here you will have to update the progressbar
-        // with something like
-        mProgressDialog.setProgress(Integer.parseInt(args[0]));
-    }
+		// here you will have to update the progressbar
+		// with something like
+		mProgressDialog.setProgress(Integer.parseInt(args[0]));
+	}
 }
 
 

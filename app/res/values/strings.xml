@@ -16,9 +16,10 @@
     <string name="menuMeds">Meds</string>
     <string name="menuReminders">Reminders</string>
     <string name="menuSettings">Settings</string>
+    <string name="menuSmart">SmartWatch</string>
     <string name="labelMedsActivity">Meds</string>
     <string name="labelRemindersActivity">Reminders</string>
-    <string name="labelNotificationActivity">labelNotificationActivity</string>
+    <string name="labelSmartPreferencesActivity">SmartWatch</string>
     <string name="labelAlertWithTtsActivity">Alert with TTS</string>
     <string name="menuRemindersAdd">Add</string>
     <string name="menuRemindersSort">Sort</string>

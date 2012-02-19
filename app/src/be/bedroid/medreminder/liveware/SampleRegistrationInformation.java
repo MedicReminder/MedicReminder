@@ -32,6 +32,7 @@
 package be.bedroid.medreminder.liveware;
 
 import be.bedroid.medreminder.R;
+import be.bedroid.medreminder.SmartPreferencesActivity;
 
 import com.sonyericsson.extras.liveware.aef.notification.Notification;
 import com.sonyericsson.extras.liveware.aef.registration.Registration;
@@ -92,7 +93,7 @@ public class SampleRegistrationInformation extends RegistrationInformation {
 
 		ContentValues values = new ContentValues();
 		values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY,
-				SamplePreferenceActivity.class.getName());
+				SmartPreferencesActivity.class.getName());
 		values.put(Registration.ExtensionColumns.CONFIGURATION_TEXT, configurationText);
 		values.put(Registration.ExtensionColumns.EXTENSION_ICON_URI, extensionIcon);
 		values.put(Registration.ExtensionColumns.EXTENSION_KEY,
@@ -120,31 +121,31 @@ public class SampleRegistrationInformation extends RegistrationInformation {
 	 * @param extensionSpecificId
 	 * @return The source configuration
 	 */
-	 public ContentValues getSourceRegistrationConfiguration(String extensionSpecificId) {
-		 ContentValues sourceValues = null;
+	public ContentValues getSourceRegistrationConfiguration(String extensionSpecificId) {
+		ContentValues sourceValues = null;
 
-		 String iconSource1 = ExtensionUtils.getUriString(mContext,
-				 R.drawable.icn_30x30_message_notification);
-		 String iconSource2 = ExtensionUtils.getUriString(mContext,
-				 R.drawable.icn_18x18_message_notification);
-		 String iconBw = ExtensionUtils.getUriString(mContext,
-				 R.drawable.icn_18x18_black_white_message_notification);
-		 String actionEvent1 = mContext.getString(R.string.action_event_1);
-		 String textToSpeech = mContext.getString(R.string.text_to_speech);
+		String iconSource1 = ExtensionUtils.getUriString(mContext,
+				R.drawable.icn_30x30_message_notification);
+		String iconSource2 = ExtensionUtils.getUriString(mContext,
+				R.drawable.icn_18x18_message_notification);
+		String iconBw = ExtensionUtils.getUriString(mContext,
+				R.drawable.icn_18x18_black_white_message_notification);
+		String actionEvent1 = mContext.getString(R.string.action_event_1);
+		String textToSpeech = mContext.getString(R.string.text_to_speech);
 
-		 sourceValues = new ContentValues();
-		 sourceValues.put(Notification.SourceColumns.ACTION_1, actionEvent1);
-		 sourceValues.put(Notification.SourceColumns.ENABLED, true);
-		 sourceValues.put(Notification.SourceColumns.ICON_URI_1, iconSource1);
-		 sourceValues.put(Notification.SourceColumns.ICON_URI_2, iconSource2);
-		 sourceValues.put(Notification.SourceColumns.ICON_URI_BLACK_WHITE, iconBw);
-		 sourceValues.put(Notification.SourceColumns.UPDATE_TIME, System.currentTimeMillis());
-		 sourceValues.put(Notification.SourceColumns.NAME, mContext.getString(R.string.source_name));
-		 sourceValues.put(Notification.SourceColumns.EXTENSION_SPECIFIC_ID, extensionSpecificId);
-		 sourceValues.put(Notification.SourceColumns.PACKAGE_NAME, mContext.getPackageName());
-		 sourceValues.put(Notification.SourceColumns.TEXT_TO_SPEECH, textToSpeech);
+		sourceValues = new ContentValues();
+		sourceValues.put(Notification.SourceColumns.ACTION_1, actionEvent1);
+		sourceValues.put(Notification.SourceColumns.ENABLED, true);
+		sourceValues.put(Notification.SourceColumns.ICON_URI_1, iconSource1);
+		sourceValues.put(Notification.SourceColumns.ICON_URI_2, iconSource2);
+		sourceValues.put(Notification.SourceColumns.ICON_URI_BLACK_WHITE, iconBw);
+		sourceValues.put(Notification.SourceColumns.UPDATE_TIME, System.currentTimeMillis());
+		sourceValues.put(Notification.SourceColumns.NAME, mContext.getString(R.string.source_name));
+		sourceValues.put(Notification.SourceColumns.EXTENSION_SPECIFIC_ID, extensionSpecificId);
+		sourceValues.put(Notification.SourceColumns.PACKAGE_NAME, mContext.getPackageName());
+		sourceValues.put(Notification.SourceColumns.TEXT_TO_SPEECH, textToSpeech);
 
-		 return sourceValues;
-	 }
+		return sourceValues;
+	}
 
 }
